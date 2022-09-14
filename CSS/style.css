@@ -6,3 +6,19 @@ body{
     background-size: cover;
     
 }
+
+.owl-container{
+    max-width: 900;
+    margin: auto;
+    
+    
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+}
