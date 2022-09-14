@@ -1,6 +1,6 @@
 
 body{
-    background-image: url(../Img/Background.jpg);
+    background-image: url(../Img/Background\ 2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -18,10 +18,32 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 35%;
+    margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
     
     
     
+}
+.item img {
+    height: auto !important;
+    width: auto !important;
+}
+.dealstab{
+    color: whitesmoke;
+    margin-top: 15%;
+    margin-left: 10%;
+}
+
+.owl-nav{
+    position: absolute;
+    top: 20rem;
+    right: 15rem;
+    color: whitesmoke;
+}
+
+.owl-nav .owl-prev:hover, .owl-nav .owl-next:hover{
+    background: none !important;
+    outline: none !important;
+    opacity: 1;
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Phonix AirLine PVT</title>
     
     
     <link rel="stylesheet" href="./CSS/bootstrap.min.css"> 
@@ -38,9 +38,14 @@
 
       </header>
       <main>
-        <h1>Hello, world!</h1>
+        
+      
 <!-- card set -->
 <div class="owl-container">
+  <div class="dealstab">
+    <h3>Latest Deals!</h3>
+  </div>
+  
         <div class="owl-carousel owl-theme">
           <div class="item"><h4>
 
@@ -53,7 +58,10 @@
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button class="btn btn-primary" type="button">Button</button>
+                      
+                    </div>
                   </div>
                 </div>
               </div>
@@ -65,13 +73,16 @@
             <div class="card mb-3" style="max-width: 540px;">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="./Img/card1.jpg" class="img-fluid rounded-start" alt="card1">
+                  <img src="./Img/card2.jpg" class="img-fluid rounded-start" alt="card1">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button class="btn btn-primary" type="button">Button</button>
+                      
+                    </div>
                   </div>
                 </div>
               </div>
@@ -85,13 +96,38 @@
             <div class="card mb-3" style="max-width: 540px;">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="./Img/card1.jpg" class="img-fluid rounded-start" alt="card1">
+                  <img src="./Img/card3.jpg" class="img-fluid rounded-start" alt="card1">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button class="btn btn-primary" type="button">Button</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </h4></div>
+
+          <div class="item"><h4>
+
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./Img/card4.jpg" class="img-fluid rounded-start" alt="card1">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button class="btn btn-primary" type="button">Button</button>
+                      
+                    </div>
                   </div>
                 </div>
               </div>
@@ -116,6 +152,10 @@
       <script src="./Js/jqeuery.min.js"></script>
       <script src="./Js/owl.carousel.min.js"></script>
       <script type="text/javascript">
+       
+       const nextIcon = '<img src="./Img/arrow_right.svg" alt: "Right" >';
+       const prevIcon = '<img src="./Img/arrow_left.svg" alt: "left" >';
+
       $('.owl-carousel').owlCarousel({
         stagePadding: 50,
         autoplay:true,
@@ -123,6 +163,10 @@
     loop:true,
     margin:10,
     nav:true,
+    navText: [
+      prevIcon,
+      nextIcon
+    ],
     responsiveClass:true,
     responsive:{
         0:{
