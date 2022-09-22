@@ -1,6 +1,8 @@
 body {
-    background-image:url(../Img/loginBackground.jpg);
+    background-image:url(../Img/background2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    max-width: 100%;
+    
 }
