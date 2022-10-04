@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: content-box;
+    font-family: lato, sans-serif;
 }
 
 body{
@@ -77,6 +78,6 @@ color: rgba(255, 255, 255, 0.8);
 
 }
 .logo {
-    height: 100px;
-    width: auto;
+    height: 20px;
+    size: 14;
 }
