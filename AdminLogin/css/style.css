@@ -12,6 +12,7 @@ body{
     background-size: cover;
     background-position: center;
     
+    
 }
 
 .logoo{
@@ -27,9 +28,9 @@ body{
     height: 518px;
     width: 678px;
     background-color: rgba(251, 251, 251, 0.8);
-    margin-top: 55px;
-    margin-bottom: 108px;
+    margin-top: 238px;
     margin-left: 429px;
-    margin-right:429px ;
+    margin-right:429px;
+    margin-bottom: 108px;
     border-radius: 8px;
 }
