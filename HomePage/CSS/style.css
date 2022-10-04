@@ -14,6 +14,8 @@ body{
     
 }
 
+/* Corosal*/
+
 .owl-container{
     max-width:auto;
     margin: auto;
@@ -25,7 +27,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
+    
     margin-left: 5%;
     margin-right: 5%;
     
@@ -57,27 +59,15 @@ body{
     opacity: 1;
 }
 
-.section{
-    padding: 75px 45px 75px 45px;
+/*Nav*/
+
+.hidden {
+    display: none;
 }
 
-.custom-navbar {
-    padding-top: 0px;
-}
-.custom-navbar{
-    font-family: 'Lato';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-/* identical to box height */
-
-text-align: center;
-
-color: rgba(255, 255, 255, 0.8);
-
-}
-.logo {
-    height: 20px;
-    size: 14;
+.nav1 {
+    margin-top: 46px;
+    margin-bottom: 144px;
+    margin-left: 75px;
+    margin-right: 157px;
 }
