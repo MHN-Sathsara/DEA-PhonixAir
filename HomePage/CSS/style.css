@@ -48,8 +48,10 @@ body{
 
 .owl-nav{
     position: absolute;
-    top: 20rem;
-    right: 15rem;
+    margin-bottom: 20px;
+    margin-left: 1250px;
+    /*top: 12rem;
+    right: 15rem;*/
     color: whitesmoke;
 }
 
