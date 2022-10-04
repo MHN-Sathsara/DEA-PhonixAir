@@ -1,9 +1,15 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+}
 
 body{
-    background-image: url(../Img/Background\ 2.jpg);
+    background-image: url(../Img/Background3-min.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     
 }
 
@@ -25,10 +31,12 @@ body{
     
     
 }
+
 .item img {
     height: auto !important;
     width: auto !important;
 }
+
 .dealstab{
     color: whitesmoke;
     margin-top: 15%;
@@ -46,4 +54,29 @@ body{
     background: none !important;
     outline: none !important;
     opacity: 1;
+}
+
+.section{
+    padding: 75px 45px 75px 45px;
+}
+
+.custom-navbar {
+    padding-top: 0px;
+}
+.custom-navbar{
+    font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height */
+
+text-align: center;
+
+color: rgba(255, 255, 255, 0.8);
+
+}
+.logo {
+    height: 100px;
+    width: auto;
 }
