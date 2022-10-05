@@ -20,12 +20,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<<<<<<< Updated upstream
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello <%= admin.getEmail() %> </h1>
-=======
         <title>Admin Dashboard</title>
     </head>
     <body>
@@ -33,7 +27,6 @@
         <form action="adminlogout" method="post">
             <button type="submit">Log Out</a></button>
         </form>
->>>>>>> Stashed changes
         
     </body>
 </html>

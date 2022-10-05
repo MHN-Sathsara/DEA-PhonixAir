@@ -3,10 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DEA.PhoniexAirlines.Staff.servlet;
+package DEA.PhoniexAirlines.Client.servlet;
 
+import DEA.PhoniexAirlines.Client.dao.Clientdao;
+import DEA.PhoniexAirlines.Client.model.Client;
+import DEA.PhoniexAirlines.connection.DBConnection;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +23,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Raffael
  */
-public class stafflogout extends HttpServlet {
+public class clientlogin extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +42,10 @@ public class stafflogout extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet stafflogout</title>");            
+            out.println("<title>Servlet clientlogin</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet stafflogout at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet clientlogin at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -47,9 +53,23 @@ public class stafflogout extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            HttpSession session = request.getSession();
-            session.removeAttribute("loggedStaff");
-            response.sendRedirect("Staff-Login.html");
+        PrintWriter out = response.getWriter();
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        
+        try {
+            Clientdao clientdao = new Clientdao(DBConnection.getCon());
+            Client client = clientdao.logClient(username,password);
+            if(client!=null){
+                HttpSession session = request.getSession();
+                session.setAttribute("loggedClient", client);
+                response.sendRedirect("ClientDash.jsp");
+            }else{
+                out.println("User Does Not Exist");
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(clientlogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

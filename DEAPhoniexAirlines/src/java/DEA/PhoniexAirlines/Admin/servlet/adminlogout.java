@@ -49,7 +49,7 @@ public class adminlogout extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             HttpSession session = request.getSession();
-            session.removeAttribute("logUser");
+            session.removeAttribute("loggedAdmin");
             response.sendRedirect("adminlog.html");
     }
 

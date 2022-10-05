@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DEA.PhoniexAirlines.Staff.servlet;
+package DEA.PhoniexAirlines.Client.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Raffael
  */
-public class stafflogout extends HttpServlet {
+public class clientlogout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +36,10 @@ public class stafflogout extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet stafflogout</title>");            
+            out.println("<title>Servlet clientlogout</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet stafflogout at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet clientlogout at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -47,9 +47,10 @@ public class stafflogout extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            
             HttpSession session = request.getSession();
-            session.removeAttribute("loggedStaff");
-            response.sendRedirect("Staff-Login.html");
+            session.removeAttribute("loggedClient");
+            response.sendRedirect("Login.html");
     }
 
     /**

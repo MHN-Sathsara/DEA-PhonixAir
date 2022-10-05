@@ -1,17 +1,17 @@
 <%-- 
-    Document   : admindash
-    Created on : Oct 5, 2022, 7:40:05 AM
+    Document   : ClientDash
+    Created on : Oct 5, 2022, 4:23:17 PM
     Author     : Raffael
 --%>
-<%@page import="DEA.PhoniexAirlines.Admin.model.Admin"%>
+<%@page import="DEA.PhoniexAirlines.Client.model.Client"%>
 <%@page import="DEA.PhoniexAirlines.connection.DBConnection"%>
 <% 
     DBConnection db = new DBConnection();
 %>
 <% 
-    Admin admin = (Admin) session.getAttribute("loggedAdmin"); 
-    if(admin == null) {
-        response.sendRedirect("adminlogin.jsp");
+    Client client = (Client) session.getAttribute("loggedClient"); 
+    if(client == null) {
+        response.sendRedirect("Login.html");
     }
 
 %>
@@ -20,13 +20,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin Dashboard</title>
+        <title>Client Dashboard</title>
     </head>
     <body>
-        <h1>Hello <%= admin.getEmail() %> </h1>
-        <form action="adminlogout" method="post">
+        <h1>Hello <%= client.getEmail() %> </h1>
+        <form action="clientlogout" method="post">
             <button type="submit">Log Out</a></button>
         </form>
-        
     </body>
 </html>
