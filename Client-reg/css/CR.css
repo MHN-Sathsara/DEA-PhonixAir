@@ -1,3 +1,14 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+    font-family: lato, sans-serif;
+}
+.body{
+    background-color: rgba(251, 251, 251, 0.8);
+}
+
+
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
     font-size: 1rem;
     line-height: 2.15;
@@ -7,3 +18,11 @@
     .card-registration .select-arrow {
     top: 13px;
     }
+
+.logoo{
+   
+width: 156px;
+height: 74.88px;
+left: 1183px;
+top: 99px;
+}
