@@ -15,6 +15,13 @@
     height: 100%;
     overflow: auto;
 }
+/*Logo*/
+.logoo{
+    margin-top: 30px;
+    margin-bottom: 98px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
 
 /* Side links */
 
@@ -28,6 +35,11 @@
 /*Active link*/
 .sidebar a.active {
     background-color: #555;
+    color: white;
+}
+/*Hover*/
+.sidebar a.active{
+    background-color: #04aa6d;
     color: white;
 }
 
@@ -53,5 +65,8 @@ div.content {
     .sidebar a{
         text-align: center;
         float: none;
+    }
+    .logoo{
+        display: none;
     }
 }
