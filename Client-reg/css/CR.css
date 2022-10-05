@@ -5,7 +5,9 @@
     font-family: lato, sans-serif;
 }
 .body{
-    background-color: rgba(251, 251, 251, 0.8);
+    
+    background-image: url(../img/Left\ Side-min.jpg);
+    background-repeat: no-repeat;
 }
 
 
@@ -25,4 +27,13 @@ width: 156px;
 height: 74.88px;
 left: 1183px;
 top: 99px;
+}
+.cardreg{
+    margin-left: 987px;
+    height: 846px;
+    width: auto;
+}
+
+.photocardleft{
+margin-right: 545px;    
 }
