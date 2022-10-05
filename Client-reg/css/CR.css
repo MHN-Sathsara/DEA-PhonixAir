@@ -10,30 +10,39 @@
     background-repeat: no-repeat;
 }
 
+.pag{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
 
-.card-registration .select-input.form-control[readonly]:not([disabled]) {
-    font-size: 1rem;
-    line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
-    }
-    .card-registration .select-arrow {
-    top: 13px;
-    }
 
 .logoo{
-   
+    
+display: flex;
 width: 156px;
 height: 74.88px;
 left: 1183px;
 top: 99px;
 }
-.cardreg{
-    margin-left: 987px;
-    height: 846px;
-    width: auto;
-}
 
 .photocardleft{
-margin-right: 545px;    
+position: absolute;
+width: 1310px;
+height: 864px;
+left: 0px;
+top: 0px;
+margin-right: 545px;
+}
+
+.cardreg{
+
+width: 800px;
+margin-left: 1500px;
+
+}
+
+.formeka{
+    align-items: center;
+    
 }
