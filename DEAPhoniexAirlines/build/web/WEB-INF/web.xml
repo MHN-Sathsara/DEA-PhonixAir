@@ -4,10 +4,40 @@
         <servlet-name>adminlogin</servlet-name>
         <servlet-class>DEA.PhoniexAirlines.Admin.servlet.adminlogin</servlet-class>
     </servlet>
+<<<<<<< Updated upstream
+=======
+    <servlet>
+        <servlet-name>adminlogout</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.Admin.servlet.adminlogout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>stafflogin</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.Staff.servlet.stafflogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>stafflogout</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.Staff.servlet.stafflogout</servlet-class>
+    </servlet>
+>>>>>>> Stashed changes
     <servlet-mapping>
         <servlet-name>adminlogin</servlet-name>
         <url-pattern>/admin/adminlogin</url-pattern>
     </servlet-mapping>
+<<<<<<< Updated upstream
+=======
+    <servlet-mapping>
+        <servlet-name>adminlogout</servlet-name>
+        <url-pattern>/admin/adminlogout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stafflogin</servlet-name>
+        <url-pattern>/Staff/stafflogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stafflogout</servlet-name>
+        <url-pattern>/Staff/stafflogout</url-pattern>
+    </servlet-mapping>
+>>>>>>> Stashed changes
     <session-config>
         <session-timeout>
             30
