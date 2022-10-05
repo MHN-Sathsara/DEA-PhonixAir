@@ -1,25 +1,36 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: content-box;
     font-family: lato, sans-serif;
 }
 
-body {
-    background-image:url(../Img/background2.jpg);
+body{
+    background-image: url(../Img/Background.jpg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
+    background-position: center;
+    
     
 }
 
-.row{
+.square{
     position: absolute;
-    width: 678px;
-    height: 648px;
-    left: 429px;
-    top: 108px;
     margin-top: 108px;
+    margin-bottom: 55px ;
+    margin-left: 690px;
+    margin-right: 690px;
+
+}
+.rectangle{
+    position: absolute;
+    height: 518px;
+    width: 678px;
+    background-color: rgba(251, 251, 251, 0.8);
+    margin-top: 238px;
     margin-left: 429px;
-    margin-right: 429px;
+    margin-right:429px;
     margin-bottom: 108px;
+    border-radius: 8px;
 }
