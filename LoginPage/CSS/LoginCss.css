@@ -1,9 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+    font-family: lato, sans-serif;
+}
+
 body {
     background-image:url(../Img/background2.jpg);
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
-    max-width: 100%;
     
 }
 
