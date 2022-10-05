@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+    font-family: lato, sans-serif;
+}
+.body{
+    
+    background-image: url(../img/Left\ Side-min.jpg);
+    background-repeat: no-repeat;
+}
+
+.pag{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+
+.logoo{
+    
+display: flex;
+width: 156px;
+height: 74.88px;
+left: 1183px;
+top: 99px;
+}
+
+.photocardleft{
+position: absolute;
+width: 1310px;
+height: 864px;
+left: 0px;
+top: 0px;
+margin-right: 545px;
+}
+
+.cardreg{
+
+width: 800px;
+margin-left: 1500px;
+
+}
+
+.formeka{
+    align-items: center;
+    
+}
