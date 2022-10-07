@@ -28,25 +28,39 @@ body{
 }
 
 /*Form Box*/
+.headtitile{
+    width: 1108px;
+    height: 52px;
+    margin-left: 51px;
+    margin-right: 51px;
+    margin-top: 39px;
+    border-bottom: 2px;
+}
 
 .booking-form-box{
     max-width: 1210px;
+    max-height: 306px;
     border: 1px solid #ced4da;
     margin: 10% auto 0; 
+    background: #FBFBFB;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.15);
 }
 
 .booking-form{
-    padding: 0 20px 20px;
+    padding: 0 40px 40px;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.15);
 }
 .booking-form label{
     margin-bottom: 5px;
     margin-top: 10px;
     font-size: 12px;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 input::placeholder{
     color: #fff !important;
+    
 }
 
 .input-grp{
@@ -58,6 +72,6 @@ input::placeholder{
     font-size: 12px !important;
     border-radius: 4px !important;
     color: #fff !important;
-    box-shadow: none !important;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.15) !important;
 }
 
