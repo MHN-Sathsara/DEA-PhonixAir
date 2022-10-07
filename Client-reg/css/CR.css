@@ -5,12 +5,25 @@
     margin: 0px;
     padding: 0px;
     box-sizing: content-box;
-    font-family: lato, sans-serif;
+    font-family: "lato", sans-serif;
 }
 
 body{
+    background-image: url(../img/alexander-nrjwolf-X0Osf55s5yk-unsplash.jpg);
     background-size: cover;
     margin: 0;
+}
+
+.logoo{
+    width: 156px;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 99px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 69px;
 }
 
 input, select, button{
@@ -39,18 +52,19 @@ img{
     justify-content: center;
 }
 .inner{
-    padding: 20px;
+    padding: 0;
     background: #fff;
-    max-width: 850px;
+    max-width: 100%;
+    max-height: 65%;
     margin: auto;
     display: flex;
 }
 
 .inner .img-holder{
-    width: 50%;
+    width: 65%;
 }
 .inner form{
-    width: 50%;
+    width: 35%;
     padding-top: 36px;
     padding-left: 45px;
     padding-right: 45px;
@@ -87,7 +101,7 @@ select{
 
 button{
     border: none;
-    width: 164px;
+    width: 354px;
     height: 51px;
     margin: auto;
     margin-top: 45px;
@@ -99,4 +113,20 @@ button{
     background: rgba(21, 48, 68, 1);
     font-size: 15px;
     color: #fff;
+}
+button:hover{
+    background: black;
+}
+@media ( max-width:767px ){
+    .inner{
+        display: block;
+    }
+    .inner .image-holder{
+        width: 100%;
+        padding: 40px 0 30px;
+    }
+    button{
+        margin-top: 60px;
+
+    }
 }
