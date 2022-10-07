@@ -1,6 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 * {
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     box-sizing: content-box;
     font-family: lato, sans-serif;
+}
+
+body{
+    background-size: cover;
+    margin: 0;
+}
+
+input, select, button{
+    font-family: lato;
+    color: #333;
+    font-size: 14px;
+}
+
+h3,h4{
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+}
+:focus{
+    outline: none; 
+}
+
+.wrapper{
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner{
+    padding: 20px;
+    background: #fff;
+    max-width: 850px;
+    margin: auto;
+    display: flex;
 }
