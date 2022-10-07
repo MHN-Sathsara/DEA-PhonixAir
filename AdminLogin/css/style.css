@@ -77,7 +77,28 @@ input[type="text"] {
   transition: 0.5s;
 }
 
+input[type="password"] {
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0px;
+  background-color: transparent;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+
+  color: rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
 input[type="text"]:focus {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  background-color: rgba(251, 251, 251, 0.9);
+  border-radius: 4px;
+}
+
+input[type="password"]:focus {
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   background-color: rgba(251, 251, 251, 0.9);
   border-radius: 4px;
