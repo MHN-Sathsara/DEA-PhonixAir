@@ -1,115 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Phonix AirLine PVT</title>
-    
-    
-    <link rel="stylesheet" href="./CSS/bootstrap.min.css"> 
-    <link rel="stylesheet" href="./CSS/style.css">
 
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
-      <header>
-        <!--Navigation Bar-->
-        <div class="nav1">
-          <nav class="navbar navbar-expand-sm navbar-dark">
-            <a href="#" class="navbar-brand"> 
-              <img src="./Img/Phoenix Airline PVT_free-file 1.png" alt="logoo"  width="115px" height="60px"
+    <!--Navigation Bar-->
+    <div class="nav1">
+      <nav class="navbar navbar-expand-sm navbar-dark">
+        <a href="#" class="navbar-brand">
+          <span
+            ><img
+              src="./Img/Phoenix Airline PVT_free-file 1.png"
+              alt="logoo"
+              width="115px"
+              height="60px" /></span
+        ></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#toggleMobileMenu"
+          aria-controls="toggleMobileMenu"
+          aria-expanded="false"
+          aria-label="Toggle navgation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="toggleMobileMenu">
+          <ul class="navbar-nav ms-auto text-center">
+            <li>
+              <a class="nav-link" href="../HomePage/Home.html">Home</a>
+            </li>
+            <li>
+              <a class="nav-link active" href="./Page2.html">Book A Flight</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#">Flight Status</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="header"><h4>Hi, Where would you like to go?</h4></div>
+
+      <div class="flex-center-hr">
+        <div class="from-to flex-center-hr">
+          <div class="from-parent flex-center-hr">
+            <div class="from">
+              <p class="caption">From</p>
+              <input
+                type="text"
+                placeholder="Type Here..."
+                class="from-input"
               />
-              <span class="hidden">
-               Phonix Air</span></a>
-            <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#toggleMobileMenu"
-            aria-controls="toggleMobileMenu"
-            aria-expanded="false"
-            aria-label="Toggle navgation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="toggleMobileMenu">
-              <ul class="navbar-nav ms-auto text-center">
-                <li>
-                  <a class="nav-link" href="../HomePage/Home.html">Home</a>
-                </li>
-                <li>
-                  <a class="nav-link" href="./Page2.html">Book A Flight</a>
-                </li>
-                <li>
-                  <a class="nav-link" href="#">Flight Stetus</a>
-                </li>
-                <li>
-                  <a class="nav-link" href="#">Sign Up</a>
-                </li>
-                
-              </ul>
             </div>
-
-          </nav>
+            <div class="from-icon">
+              <img
+                src="../bookaFlight/Img/cancel_24px_rounded.svg"
+                alt="Close Icon"
+              />
+            </div>
+          </div>
+          <div class="to-parent flex-center-hr">
+            <div><p class="to">To</p></div>
+            <div>
+              <input
+                type="text"
+                placeholder="Type Here..."
+                class="from-input"
+              />
+            </div>
+            <div>
+              <img
+                src="img/location_on_24px_rounded.svg"
+                alt="location_on_24px_rounded"
+              />
+            </div>
+          </div>
         </div>
-
-      </header>
-      <main>
-        <!--FORM-->
-      <div class="booking-form-box">
-        <div class="headtitile">
-        <header>Hi,Whare do you like to go ?</header>
-      </div>
-  
-      
-       <div class="booking-form">
-         <label>Flying From</label>
-         <input type="text" class="form-control" placeholder="City or Airport">
-         <label>Flying To</label>
-         <input type="text" class="form-control" placeholder="City or Airport">
-
-         <div class="input-grp">
-           <label>Departing</label>
-           <input type="date" class="form-control select-date">
-         </div>
-         <div class="input-grp">
-           <label>Departing</label>
-           <input type="date" class="form-control select-date">
-         </div>
-
-         <div class="input-grp">
-          <label>Adults</label>
-          <input type="number" class="form-control" value="1">
-        </div>
-        <div class="input-grp">
-          <label>Childerns</label>
-          <input type="number" class="form-control " value="0">
-        </div>
-
-        <div class="input-grp">
-          <label>Travel Class</label>
-          <select class="custom-select">
-             <option value="1">Economy Class</option>
-             <option value="2">Business Class</option>
-             
-            </select>
-        </div>
-        <div class="input-grp">
-          <button type="button" class="btn btn-primary flight">Check</button>
-        </div>
-
-
-
+        <div class="date flex-center-hr">
+          <div class="depart-date">
+            <input
+              type="text"
+              placeholder="Depart Date"
+              onfocus="(this.type='date')"
+            />
+          </div>
+          <div class="return-date">
+            <input
+              type="text"
+              placeholder="Return Date"
+              onfocus="(this.type='date')"
+            />
+          </div>
         </div>
       </div>
-      </main>
- <footer>
+    </div>
 
-
-</footer>
-
-      </footer>
-      
-      <script src="./Js/bootstrap.bundle.min.js"></script>
-      <script src="./Js/jqeuery.min.js"></script>
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/jqeuery.min.js"></script>
   </body>
 </html>
