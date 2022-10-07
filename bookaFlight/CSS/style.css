@@ -1,0 +1,63 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+    font-family: lato, sans-serif;
+}
+
+body{
+    background-image: url(../Img/Background3-min.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+/*Nav*/
+
+.hidden {
+    display: none;
+}
+
+.nav1 {
+    margin-top: 46px;
+    margin-bottom: 50px;
+    margin-left: 75px;
+    margin-right: 157px;
+}
+
+/*Form Box*/
+
+.booking-form-box{
+    max-width: 1210px;
+    border: 1px solid #ced4da;
+    margin: 10% auto 0; 
+}
+
+.booking-form{
+    padding: 0 20px 20px;
+}
+.booking-form label{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #fff;
+}
+
+input::placeholder{
+    color: #fff !important;
+}
+
+.input-grp{
+    width: 150px;
+    display: inline-block;
+}
+
+.form-control{
+    font-size: 12px !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
