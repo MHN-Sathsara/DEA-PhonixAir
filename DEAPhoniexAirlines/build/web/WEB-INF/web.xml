@@ -24,6 +24,10 @@
         <servlet-name>clientlogout</servlet-name>
         <servlet-class>DEA.PhoniexAirlines.Client.servlet.clientlogout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>registration</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.ClientRegistration.registration</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>adminlogin</servlet-name>
         <url-pattern>/admin/adminlogin</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>clientlogout</servlet-name>
         <url-pattern>/Client/clientlogout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registration</servlet-name>
+        <url-pattern>/Client/registration</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

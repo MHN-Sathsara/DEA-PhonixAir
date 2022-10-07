@@ -3,20 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Admin/servlet/adminlogin.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Admin/servlet/adminlogout.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/admindash.jsp</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Staff/servlet/stafflogout.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Client/model/Client.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/Client/ClientDash.jsp</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Client/dao/Clientdao.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Admin/DAO/Admindao.java</file>
             <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Client/services/logClient.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Client/servlet/clientlogout.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/Client/CSS/CR.css</file>
             <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/Client/Login.html</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Client/servlet/clientlogin.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Staff/servlet/stafflogin.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/Client/client-reg.html</file>
         </group>
     </open-files>
 </project-private>
