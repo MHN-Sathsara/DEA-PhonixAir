@@ -16,6 +16,7 @@ public class StaffMember extends Person{
    private String email;
    private String password;
    private String grade;
+   
 
    public StaffMember() {}
 
@@ -23,6 +24,14 @@ public class StaffMember extends Person{
         super(username);
     }
 
+    public StaffMember(String email, String grade) {
+        this.email = email;
+        this.grade = grade;
+    }
+
+    
+    
+    
     public StaffMember(int id, String email, String password, String grade, String username) {
         super(username);
         this.id = id;
@@ -68,6 +77,16 @@ public class StaffMember extends Person{
 
     public void setGrade(String grade) {
         this.grade = grade;
+    }
+
+   @Override
+    public String getUsername() {
+        return username;
+    }
+
+   @Override
+    public void setUsername(String username) {
+        this.username = username;
     }
    
    

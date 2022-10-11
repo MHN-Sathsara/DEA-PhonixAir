@@ -3,10 +3,12 @@
     Created on : Oct 5, 2022, 7:40:05 AM
     Author     : Raffael
 --%>
+
 <%@page import="DEA.PhoniexAirlines.Admin.model.Admin"%>
 <%@page import="DEA.PhoniexAirlines.connection.DBConnection"%>
 <% 
     DBConnection db = new DBConnection();
+    
 %>
 <% 
     Admin admin = (Admin) session.getAttribute("loggedAdmin"); 
@@ -27,6 +29,7 @@
         <form action="adminlogout" method="post">
             <button type="submit">Log Out</a></button>
         </form>
+        <a href="staffrequests.jsp">New Requests</a>
         
     </body>
 </html>

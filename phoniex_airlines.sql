@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2022 at 04:48 PM
+-- Generation Time: Oct 11, 2022 at 08:24 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -87,7 +87,25 @@ CREATE TABLE `staff` (
 
 INSERT INTO `staff` (`id`, `username`, `email`, `password`, `grade`) VALUES
 (1, 'staffg1', 'staffg1@gmail.com', '@phoniex#staffg1', 'g1'),
-(2, 'staffg2', 'staffg2@gmail.com', '@phoniex#staffg2', 'g2');
+(2, 'staffg2', 'staffg2@gmail.com', '@phoniex#staffg2', 'g2'),
+(9, 'staffn1', 'staffn1@mail.com', '@phoniex#staffn1', 'g1'),
+(10, 'staffn2', 'staffn2@mail.com', '@phoniex#staffn2', 'g2'),
+(12, 'staffn3', 'staffn3@mail.com', '@phoniex#staffn3', 'g1'),
+(13, 'staffn4', 'staffn4@mail.com', '@phoniex#staffn4', 'g2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staffrequest`
+--
+
+CREATE TABLE `staffrequest` (
+  `id` int(11) NOT NULL,
+  `username` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `grade` varchar(10) NOT NULL,
+  `password` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -115,6 +133,13 @@ ALTER TABLE `staff`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `staffrequest`
+--
+ALTER TABLE `staffrequest`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -134,7 +159,13 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `staffrequest`
+--
+ALTER TABLE `staffrequest`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

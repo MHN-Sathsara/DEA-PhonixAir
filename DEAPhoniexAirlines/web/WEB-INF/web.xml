@@ -28,6 +28,14 @@
         <servlet-name>registration</servlet-name>
         <servlet-class>DEA.PhoniexAirlines.ClientRegistration.registration</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>staffregistration</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.Staff.servlet.staffregistration</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>requests</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.Staff.servlet.requests</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>adminlogin</servlet-name>
         <url-pattern>/admin/adminlogin</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>registration</servlet-name>
         <url-pattern>/Client/registration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>staffregistration</servlet-name>
+        <url-pattern>/Staff/staffregistration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>requests</servlet-name>
+        <url-pattern>/admin/requests</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
