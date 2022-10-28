@@ -1,0 +1,15 @@
+SMAP
+admindash_jsp.java
+JSP
+*S JSP
+*F
++ 0 admindash.jsp
+admin/admindash.jsp
+*L
+5,8:46
+12:54,2
+14,6:57
+19,9:63
+28:72,3
+29,9:75
+*E

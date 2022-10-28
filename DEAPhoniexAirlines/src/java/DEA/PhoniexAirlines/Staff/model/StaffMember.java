@@ -29,9 +29,7 @@ public class StaffMember extends Person{
         this.grade = grade;
     }
 
-    
-    
-    
+
     public StaffMember(int id, String email, String password, String grade, String username) {
         super(username);
         this.id = id;
@@ -46,6 +44,14 @@ public class StaffMember extends Person{
         this.password = password;
         this.grade = grade;
     }
+
+    public StaffMember(int id, String email, String grade, String username) {
+        super(username);
+        this.id = id;
+        this.email = email;
+        this.grade = grade;
+    }
+    
 
     public int getId() {
         return id;

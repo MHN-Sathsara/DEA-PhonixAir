@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DEA.PhoniexAirlines.Staff.dao;
+package DEA.PhoniexAirlines.blockunblock.dao;
 
 import DEA.PhoniexAirlines.Staff.model.StaffMember;
 import java.sql.Connection;
@@ -14,39 +14,37 @@ import java.sql.SQLException;
  *
  * @author Raffael
  */
-public class approvaldao {
+public class delete {
     Connection con;
 
-    public approvaldao(Connection con) {
+    public delete(Connection con) {
         this.con = con;
     }
      
-   public boolean staffApproval(StaffMember apprStaff){
-        boolean approved = false;
+   public boolean deleteStaff(StaffMember denyStaff){
+        boolean deleted = false;
         
         try{
             
-            String query = "INSERT INTO staff (username, email, password, grade) VALUES (?,?,?,?)";
+            String query = "DELETE FROM staff WHERE email = ?";
            
             
             PreparedStatement ps = this.con.prepareStatement(query);
       
             
-            ps.setString(1, apprStaff.getUsername());
-            ps.setString(2, apprStaff.getEmail());
-            ps.setString(3, apprStaff.getPassword());
-            ps.setString(4, apprStaff.getGrade());
+            ps.setString(1, denyStaff.getEmail());
+            
            
        
             ps.executeUpdate();
             
     
            
-            approved = true;
+            deleted = true;
            
         }catch(SQLException e){
             e.printStackTrace();
         }
-        return approved;
+        return deleted;
     }
 }

@@ -30,6 +30,8 @@
             <button type="submit">Log Out</a></button>
         </form>
         <a href="staffrequests.jsp">New Requests</a>
+        <a href="staff.jsp">Staff</a>
+      
         
     </body>
 </html>

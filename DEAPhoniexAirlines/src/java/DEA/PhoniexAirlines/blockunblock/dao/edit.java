@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DEA.PhoniexAirlines.Staff.dao;
+package DEA.PhoniexAirlines.blockunblock.dao;
 
 import DEA.PhoniexAirlines.Staff.model.StaffMember;
 import java.sql.Connection;
@@ -14,39 +14,33 @@ import java.sql.SQLException;
  *
  * @author Raffael
  */
-public class approvaldao {
+public class edit {
     Connection con;
 
-    public approvaldao(Connection con) {
+    public edit(Connection con) {
         this.con = con;
     }
      
-   public boolean staffApproval(StaffMember apprStaff){
-        boolean approved = false;
+   public boolean editStaff(StaffMember regStaff){
+        boolean edited = false;
         
         try{
             
-            String query = "INSERT INTO staff (username, email, password, grade) VALUES (?,?,?,?)";
+            String query = "UPDATE staff SET username = ?, email = ?, grade = ? WHERE id = ?";
            
-            
             PreparedStatement ps = this.con.prepareStatement(query);
-      
-            
-            ps.setString(1, apprStaff.getUsername());
-            ps.setString(2, apprStaff.getEmail());
-            ps.setString(3, apprStaff.getPassword());
-            ps.setString(4, apprStaff.getGrade());
+            ps.setString(1, regStaff.getUsername());
+            ps.setString(2, regStaff.getEmail());
+            ps.setString(3, regStaff.getGrade());
+            ps.setInt(4, regStaff.getId());
            
-       
-            ps.executeUpdate();
-            
-    
+           ps.executeUpdate();
            
-            approved = true;
+           edited = true;
            
         }catch(SQLException e){
             e.printStackTrace();
         }
-        return approved;
+        return edited;
     }
 }

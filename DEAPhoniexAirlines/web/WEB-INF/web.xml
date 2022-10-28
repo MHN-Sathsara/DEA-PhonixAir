@@ -36,6 +36,14 @@
         <servlet-name>requests</servlet-name>
         <servlet-class>DEA.PhoniexAirlines.Staff.servlet.requests</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>staffmod</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.Staff.servlet.staffmod</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.Staff.servlet.update</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>adminlogin</servlet-name>
         <url-pattern>/admin/adminlogin</url-pattern>
@@ -71,6 +79,14 @@
     <servlet-mapping>
         <servlet-name>requests</servlet-name>
         <url-pattern>/admin/requests</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>staffmod</servlet-name>
+        <url-pattern>/admin/staffmod</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/admin/update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
