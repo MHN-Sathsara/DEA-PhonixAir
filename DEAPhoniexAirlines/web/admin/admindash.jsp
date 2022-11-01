@@ -29,9 +29,11 @@
         <form action="adminlogout" method="post">
             <button type="submit">Log Out</a></button>
         </form>
-        <a href="staffrequests.jsp">New Requests</a>
-        <a href="staff.jsp">Staff</a>
-      
+        <a href="staffrequests.jsp">New Requests</a><br>
+        <a href="staff.jsp">Staff</a><br>
+        <a href="blockedstaff.jsp">Blocked Staff</a><br>
+        <a href="clients.jsp">Customers</a><br>
+        <a href="blockedclients.jsp">Blocked Customers</a><br>
         
     </body>
 </html>

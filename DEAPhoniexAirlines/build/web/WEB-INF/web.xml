@@ -44,6 +44,10 @@
         <servlet-name>update</servlet-name>
         <servlet-class>DEA.PhoniexAirlines.Staff.servlet.update</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>clientmod</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.Client.servlet.clientmod</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>adminlogin</servlet-name>
         <url-pattern>/admin/adminlogin</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>update</servlet-name>
         <url-pattern>/admin/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>clientmod</servlet-name>
+        <url-pattern>/admin/clientmod</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

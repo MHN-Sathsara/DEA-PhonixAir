@@ -39,6 +39,13 @@ public class Client extends Person{
         this.NIC = NIC;
     }
 
+    public Client(String email, String password, String NIC, String username) {
+        super(username);
+        this.email = email;
+        this.password = password;
+        this.NIC = NIC;
+    }
+
     
     public Client(String email, String password, String NIC) {
         this.email = email;

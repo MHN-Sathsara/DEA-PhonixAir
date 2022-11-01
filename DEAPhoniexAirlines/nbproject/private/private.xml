@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Staff/servlet/requests.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Admin/servlet/adminlogin.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/staff.jsp</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Admin/model/Admin.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/updateprofileform.jsp</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Staff/servlet/update.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/adminlog.html</file>
         </group>
     </open-files>
 </project-private>

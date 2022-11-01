@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DEA.PhoniexAirlines.Staff.servlet;
+package DEA.PhoniexAirlines.Client.servlet;
 
+import DEA.PhoniexAirlines.Client.blockunblock.dao.blockclient;
+import DEA.PhoniexAirlines.Client.blockunblock.dao.clientunblock;
+import DEA.PhoniexAirlines.Client.blockunblock.dao.clientunblockdelete;
+import DEA.PhoniexAirlines.Client.blockunblock.dao.deleteclient;
+import DEA.PhoniexAirlines.Client.model.Client;
 import DEA.PhoniexAirlines.ClientRegistration.DBC;
-import DEA.PhoniexAirlines.Staff.model.StaffMember;
-import DEA.PhoniexAirlines.blockunblock.dao.block;
-import DEA.PhoniexAirlines.blockunblock.dao.delete;
-import DEA.PhoniexAirlines.blockunblock.dao.deletefromblock;
-import DEA.PhoniexAirlines.blockunblock.dao.unblock;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Raffael
  */
-public class staffmod extends HttpServlet {
+public class clientmod extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,15 +41,14 @@ public class staffmod extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet staffmod</title>");            
+            out.println("<title>Servlet clientmod</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet staffmod at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet clientmod at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -59,25 +57,25 @@ public class staffmod extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             String username = request.getParameter("username");
             String email = request.getParameter("email");
-            String grade = request.getParameter("grade");
+            String nic = request.getParameter("nic");
             String password = request.getParameter("password");
             String op = request.getParameter("button");
             
-            StaffMember sm;
-            delete del;
-            deletefromblock dfb;
+            Client client;
+            deleteclient dc;
+            clientunblockdelete cd;
             
           
             if(op.equals("Block")){   
-                sm = new StaffMember(email, password, grade, username);
-                block apd = new block(DBC.getCon());
-                del = new delete(DBC.getCon()); 
+                client = new Client(email, password, nic, username);
+                blockclient bc = new blockclient(DBC.getCon());
+                dc = new deleteclient(DBC.getCon()); 
                 
-                if (apd.blockStaff(sm)) {
+                if (bc.blockClient(client)) {
                     
                     out.println("Blocked");
                     
-                    if(del.deleteStaff(sm)){
+                    if(dc.deleteClient(client)){
                         out.println("Deleted");
                     }else{
                         out.println("Delete Failed");
@@ -90,19 +88,19 @@ public class staffmod extends HttpServlet {
                     
                 }
                 
-                response.sendRedirect("staff.jsp");
-                
+                response.sendRedirect("clients.jsp");
+   
             }else if(op.equals("Unblock")){
                 
-                sm = new StaffMember(email, password, grade, username);
-                unblock unb = new unblock(DBC.getCon());
-                dfb = new deletefromblock(DBC.getCon());
+                client = new Client(email, password, nic, username);
+                clientunblock cu = new clientunblock(DBC.getCon());
+                cd = new clientunblockdelete(DBC.getCon());
                 
 
-                if(unb.unblockStaff(sm)){
+                if(cu.unblockClient(client)){
                     out.println("Unblocked");
                     
-                    if(dfb.deleteStaff(sm)){
+                    if(cd.deleteClient(client)){
                         out.println("Record Deleted");
                     }else{
                         out.println("Record not Deleted");
@@ -111,27 +109,25 @@ public class staffmod extends HttpServlet {
                     out.println("Unblock failed");
                 }
                 
-                response.sendRedirect("staff.jsp");
-                
-            }else {
-                
-                String url = "updateprofileform.jsp";
-                RequestDispatcher rd = request.getRequestDispatcher(url);
-                
-                request.setAttribute("id", id);
-                request.setAttribute("username", username);
-                request.setAttribute("email", email);
-                request.setAttribute("grade", grade);
-                
-                	
-                rd.forward(request, response);
+                response.sendRedirect("clients.jsp");
                 
             }
-                
-         }
-                       
-    
-    
+
+//else {
+//                
+//                String url = "updateprofileform.jsp";
+//                RequestDispatcher rd = request.getRequestDispatcher(url);
+//                
+//                request.setAttribute("id", id);
+//                request.setAttribute("username", username);
+//                request.setAttribute("email", email);
+//                request.setAttribute("grade", grade);
+//                
+//                	
+//                rd.forward(request, response);
+//                
+//            }
+    }
 
     /**
      * Returns a short description of the servlet.
