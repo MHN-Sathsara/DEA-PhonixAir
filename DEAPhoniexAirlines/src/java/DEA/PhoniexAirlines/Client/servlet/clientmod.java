@@ -13,6 +13,7 @@ import DEA.PhoniexAirlines.Client.model.Client;
 import DEA.PhoniexAirlines.ClientRegistration.DBC;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -111,22 +112,20 @@ public class clientmod extends HttpServlet {
                 
                 response.sendRedirect("clients.jsp");
                 
+            }else {
+                
+                String url = "customerprofileupdate.jsp";
+                RequestDispatcher rd = request.getRequestDispatcher(url);
+                
+                request.setAttribute("id", id);
+                request.setAttribute("username", username);
+                request.setAttribute("email", email);
+                
+                
+                	
+                rd.forward(request, response);
+                
             }
-
-//else {
-//                
-//                String url = "updateprofileform.jsp";
-//                RequestDispatcher rd = request.getRequestDispatcher(url);
-//                
-//                request.setAttribute("id", id);
-//                request.setAttribute("username", username);
-//                request.setAttribute("email", email);
-//                request.setAttribute("grade", grade);
-//                
-//                	
-//                rd.forward(request, response);
-//                
-//            }
     }
 
     /**

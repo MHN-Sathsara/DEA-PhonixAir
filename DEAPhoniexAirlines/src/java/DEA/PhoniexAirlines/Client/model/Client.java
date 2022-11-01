@@ -24,6 +24,12 @@ public class Client extends Person{
         super(username);
     }
 
+    public Client(int id, String email, String username) {
+        super(username);
+        this.id = id;
+        this.email = email;
+    }
+
     public Client(int id, String email, String password, String NIC, String username) {
         super(username);
         this.id = id;

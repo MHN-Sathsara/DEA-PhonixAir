@@ -3,12 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Admin/servlet/adminlogin.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/staff.jsp</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Admin/model/Admin.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/updateprofileform.jsp</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Staff/servlet/staffmod.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/blockunblock/dao/edit.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/clients.jsp</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Client/servlet/clientmod.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Staff/servlet/update.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/adminlog.html</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Client/servlet/clientupdate.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Client/blockunblock/dao/adminclientupdate.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/customerprofileupdate.jsp</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Client/model/Client.java</file>
         </group>
     </open-files>
 </project-private>
