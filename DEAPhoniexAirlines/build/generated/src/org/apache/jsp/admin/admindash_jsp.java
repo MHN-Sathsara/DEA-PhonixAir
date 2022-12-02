@@ -75,8 +75,12 @@ public final class admindash_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <form action=\"adminlogout\" method=\"post\">\r\n");
       out.write("            <button type=\"submit\">Log Out</a></button>\r\n");
       out.write("        </form>\r\n");
-      out.write("        <a href=\"staffrequests.jsp\">New Requests</a>\r\n");
-      out.write("        <a href=\"staffrequests.jsp\">Staff</a>\r\n");
+      out.write("        <a href=\"staffrequests.jsp\">New Requests</a><br>\r\n");
+      out.write("        <a href=\"staff.jsp\">Staff</a><br>\r\n");
+      out.write("        <a href=\"blockedstaff.jsp\">Blocked Staff</a><br>\r\n");
+      out.write("        <a href=\"clients.jsp\">Customers</a><br>\r\n");
+      out.write("        <a href=\"blockedclients.jsp\">Blocked Customers</a><br>\r\n");
+      out.write("        <a href=\"flights/flights.jsp\">flights</a><br>\r\n");
       out.write("        \r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
