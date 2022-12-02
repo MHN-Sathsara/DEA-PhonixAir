@@ -3,6 +3,8 @@
     Created on : Dec 2, 2022, 9:49:08 AM
     Author     : Raffael
 --%>
+<%@page import="DEA.PhoniexAirlines.Client.model.Client"%>
+<%@page import="DEA.PhoniexAirlines.Staff.model.StaffMember"%>
 <%@page import="java.sql.Date"%>
 <%@page import="java.sql.Time"%>
 <%@page import="java.time.LocalTime"%>
@@ -17,9 +19,25 @@
     Connection con = db.getCon();
 %>
 <% 
-    Admin admin = (Admin) session.getAttribute("loggedAdmin"); 
-    if(admin == null) {
-        response.sendRedirect("adminlogin.jsp");
+     
+    String user = (String)session.getAttribute("type");
+    if(user != null){
+        if("admin".equals(user)){
+                Admin admin = (Admin) session.getAttribute("loggedAdmin");
+                if(admin == null) {
+                    response.sendRedirect("/DEAPhoniexAirlines/admin/adminlogin.jsp");
+                }
+        }else if("sg2".equals(user) || "sg1".equals(user)){
+                StaffMember staff = (StaffMember) session.getAttribute("loggedStaff"); 
+                if(staff == null) {
+                    response.sendRedirect("/DEAPhoniexAirlines/Staff/Staff-Login.html");
+                }
+        }else{
+                Client client = (Client) session.getAttribute("loggedClient"); 
+                if(client == null) {
+                    response.sendRedirect("/DEAPhoniexAirlines/Client/Login.html");
+                }
+        }
     }
 
 %>
@@ -29,6 +47,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Flights</title>
+       
     </head>
     <body>
         <h1>Arrivals</h1>
@@ -73,13 +92,19 @@
                             + "<td>" + "<input type='text' value='"+from+"' name='from' readonly>" + "</td>"
                             + "<td>" + "<input type='text' value='"+airline+"' name='airline' readonly>" + "</td>"
                             + "<td>" + "<input type='text' value='"+aircraft+"' name='aircraft' readonly>" + "</td>"
-                            + "<td>" + "<input type='text' value='"+status+"' name='status' readonly>" + "</td>"
-                            + "<td>" 
+                            + "<td>" + "<input type='text' value='"+status+"' name='status' readonly>" + "</td>");
                                         
-                                    + "<input type='submit' value ='Delete' name='button'/>"
-                                    + "<input type='hidden' value ='arrival' name='formname'/>"  
-                        +"</form>"
-                        +"</tr>");
+                                   
+                if("admin".equals(user) || "sg2".equals(user)){
+                    
+                    out.print("<td>"
+                            + "<input type='submit' value ='Delete' name='button'/>"
+                            + "<input type='hidden' value ='arrival' name='formname'/>"
+                            + "</td>"
+                            + "</form>");
+                }else {
+                    out.print("</form>");
+                }
             }
             
             out.print("</table>"); 
@@ -128,14 +153,18 @@
                             + "<td>" + "<input type='text' value='"+whereto+"' name='whereto' readonly>" + "</td>"
                             + "<td>" + "<input type='text' value='"+airline+"' name='airline' readonly>" + "</td>"
                             + "<td>" + "<input type='text' value='"+aircraft+"' name='aircraft' readonly>" + "</td>"
-                            + "<td>" + "<input type='text' value='"+status+"' name='status' readonly>" + "</td>"
-                            + "<td>" 
-                                        
-                                    + "<input type='submit' value ='Delete' name='button'/>"
-                                    + "<input type='hidden' value ='departure' name='formname'/>"
-            
-                        +"</form>"
-                        +"</tr>");
+                            + "<td>" + "<input type='text' value='"+status+"' name='status' readonly>" + "</td>");
+                
+                if("admin".equals(user) || "sg2".equals(user)){
+                    
+                    out.print("<td>"
+                            + "<input type='submit' value ='Delete' name='button'/>"
+                            + "<input type='hidden' value ='Departure' name='formname'/>"
+                            + "</td>"
+                            + "</form>");
+                }else{
+                    out.print("</form>");
+                }
             }
             
             out.print("</table>"); 

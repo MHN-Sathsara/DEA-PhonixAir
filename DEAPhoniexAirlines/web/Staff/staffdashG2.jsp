@@ -27,5 +27,7 @@
         <form action="stafflogout" method="post">
             <button type="submit">Log Out</a></button>
         </form>
+        <a href="/DEAPhoniexAirlines/flights/flights.jsp">Flights</a>
+        <a href="/DEAPhoniexAirlines/flights/addnewflight.jsp">Add New Flight</a>
     </body>
 </html>

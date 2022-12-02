@@ -13,7 +13,7 @@
     if(staff == null) {
         response.sendRedirect("Staff-Login.html");
     }
-
+    
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,5 +27,6 @@
         <form action="stafflogout" method="post">
             <button type="submit">Log Out</a></button>
         </form>
+        <a href="/DEAPhoniexAirlines/flights/flights.jsp">Flights</a>
     </body>
 </html>

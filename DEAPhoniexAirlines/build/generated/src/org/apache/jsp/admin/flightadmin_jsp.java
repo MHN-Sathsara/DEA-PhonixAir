@@ -1,57 +1,93 @@
-<%-- 
-    Document   : flights
-    Created on : Dec 2, 2022, 9:49:08 AM
-    Author     : Raffael
---%>
-<%@page import="DEA.PhoniexAirlines.Client.model.Client"%>
-<%@page import="DEA.PhoniexAirlines.Staff.model.StaffMember"%>
-<%@page import="java.sql.Date"%>
-<%@page import="java.sql.Time"%>
-<%@page import="java.time.LocalTime"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="DEA.PhoniexAirlines.Admin.model.Admin"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="DEA.PhoniexAirlines.connection.DBConnection"%>
-<% 
+package org.apache.jsp.admin;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalTime;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import DEA.PhoniexAirlines.Admin.model.Admin;
+import java.sql.Connection;
+import DEA.PhoniexAirlines.connection.DBConnection;
+
+public final class flightadmin_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+ 
     DBConnection db = new DBConnection();
     
     Connection con = db.getCon();
-%>
-<% 
+
+      out.write('\n');
+ 
      
     String user = (String)session.getAttribute("type");
-    if(user != null){
-        if("admin".equals(user)){
-                Admin admin = (Admin) session.getAttribute("loggedAdmin");
-                if(admin == null) {
-                    response.sendRedirect("/DEAPhoniexAirlines/admin/adminlogin.jsp");
-                }
-        }else if("sg2".equals(user) || "sg1".equals(user)){
-                StaffMember staff = (StaffMember) session.getAttribute("loggedStaff"); 
-                if(staff == null) {
-                    response.sendRedirect("/DEAPhoniexAirlines/Staff/Staff-Login.html");
-                }
-        }else{
-                Client client = (Client) session.getAttribute("loggedClient"); 
-                if(client == null) {
-                    response.sendRedirect("/DEAPhoniexAirlines/Client/Login.html");
-                }
+    if("admin".equals(user)){
+        Admin admin = (Admin) session.getAttribute("loggedAdmin");
+        if(admin == null) {
+            response.sendRedirect("adminlogin.jsp");
         }
     }
 
-%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Flights</title>
-       
-    </head>
-    <body>
-        <h1>Arrivals</h1>
-        <%
+
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Flights</title>\n");
+      out.write("       \n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <h1>Arrivals</h1>\n");
+      out.write("        ");
+
             String query = "SELECT * FROM flightarrival";
             PreparedStatement ps = con.prepareStatement(query);
             
@@ -95,24 +131,26 @@
                             + "<td>" + "<input type='text' value='"+status+"' name='status' readonly>" + "</td>");
                                         
                                    
-                if("admin".equals(user) || "sg2".equals(user)){
+                if("admin".equals(user)){
                     
                     out.print("<td>"
                             + "<input type='submit' value ='Delete' name='button'/>"
                             + "<input type='hidden' value ='arrival' name='formname'/>"
                             + "</td>"
                             + "</form>");
-                }else {
+                }else{
                     out.print("</form>");
                 }
             }
             
             out.print("</table>"); 
-        %>
         
-        <h1>Departures</h1>
-        
-        <%
+      out.write("\n");
+      out.write("        \n");
+      out.write("        <h1>Departures</h1>\n");
+      out.write("        \n");
+      out.write("        ");
+
             String dquery = "SELECT * FROM flightdeparture";
             PreparedStatement dps = con.prepareStatement(dquery);
             
@@ -155,7 +193,7 @@
                             + "<td>" + "<input type='text' value='"+aircraft+"' name='aircraft' readonly>" + "</td>"
                             + "<td>" + "<input type='text' value='"+status+"' name='status' readonly>" + "</td>");
                 
-                if("admin".equals(user) || "sg2".equals(user)){
+                if("admin".equals(user)){
                     
                     out.print("<td>"
                             + "<input type='submit' value ='Delete' name='button'/>"
@@ -168,7 +206,21 @@
             }
             
             out.print("</table>"); 
-        %>
         
-    </body>
-</html>
+      out.write("\n");
+      out.write("        \n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}

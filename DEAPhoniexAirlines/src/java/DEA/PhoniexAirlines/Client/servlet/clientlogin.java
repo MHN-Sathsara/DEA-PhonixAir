@@ -63,6 +63,7 @@ public class clientlogin extends HttpServlet {
             if(client!=null){
                 HttpSession session = request.getSession();
                 session.setAttribute("loggedClient", client);
+                session.setAttribute("type", "client");
                 response.sendRedirect("ClientDash.jsp");
             }else{
                 out.println("User Does Not Exist");

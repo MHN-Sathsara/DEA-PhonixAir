@@ -56,6 +56,10 @@
         <servlet-name>flightdelete</servlet-name>
         <servlet-class>DEA.PhoniexAirlines.Flight.servlet.flightdelete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addflight</servlet-name>
+        <servlet-class>DEA.PhoniexAirlines.Flight.servlet.addflight</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>adminlogin</servlet-name>
         <url-pattern>/admin/adminlogin</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>flightdelete</servlet-name>
         <url-pattern>/flights/flightdelete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addflight</servlet-name>
+        <url-pattern>/flights/addflight</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -7,7 +7,6 @@ package DEA.PhoniexAirlines.Flights.dao;
 
 
 import DEA.PhoniexAirlines.Flight.model.flight;
-import DEA.PhoniexAirlines.Flight.services.flightmodinterface;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

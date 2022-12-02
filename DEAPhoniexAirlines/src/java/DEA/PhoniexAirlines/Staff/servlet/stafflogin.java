@@ -65,9 +65,12 @@ public class stafflogin extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("loggedStaff", staff);
                 if("g1".equals(grade)){
+                    
+                    session.setAttribute("type", "sg1");
                     response.sendRedirect("staffdashG1.jsp");
                     
                 }else{
+                    session.setAttribute("type", "sg2");
                     response.sendRedirect("staffdashG2.jsp");
                      
                 }

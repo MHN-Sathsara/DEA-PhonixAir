@@ -5,20 +5,23 @@
  */
 package DEA.PhoniexAirlines.Flight.model;
 
+
+
+
 /**
  *
  * @author Raffael
  */
 public class flight {
     private int id;
-    private int time;
+    private String time;
     private String flight;
     private String from;
     private String airline;
     private String aircraft;
     private String status;
 
-    public flight(int time, String flight, String from, String airline, String aircraft, String status) {
+    public flight(String time, String flight, String from, String airline, String aircraft, String status) {
         this.time = time;
         this.flight = flight;
         this.from = from;
@@ -41,11 +44,11 @@ public class flight {
         this.id = id;
     }
 
-    public int getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

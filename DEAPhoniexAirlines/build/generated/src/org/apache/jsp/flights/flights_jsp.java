@@ -3,6 +3,16 @@ package org.apache.jsp.flights;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import DEA.PhoniexAirlines.Client.model.Client;
+import DEA.PhoniexAirlines.Staff.model.StaffMember;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalTime;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import DEA.PhoniexAirlines.Admin.model.Admin;
+import java.sql.Connection;
+import DEA.PhoniexAirlines.connection.DBConnection;
 
 public final class flights_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -44,14 +54,177 @@ public final class flights_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+ 
+    DBConnection db = new DBConnection();
+    
+    Connection con = db.getCon();
+
+      out.write('\n');
+ 
+     
+    String user = (String)session.getAttribute("type");
+    if(user != null){
+        if("admin".equals(user)){
+                Admin admin = (Admin) session.getAttribute("loggedAdmin");
+                if(admin == null) {
+                    response.sendRedirect("/DEAPhoniexAirlines/admin/adminlogin.jsp");
+                }
+        }else if("sg2".equals(user) || "sg1".equals(user)){
+                StaffMember staff = (StaffMember) session.getAttribute("loggedStaff"); 
+                if(staff == null) {
+                    response.sendRedirect("/DEAPhoniexAirlines/Staff/Staff-Login.html");
+                }
+        }else{
+                Client client = (Client) session.getAttribute("loggedClient"); 
+                if(client == null) {
+                    response.sendRedirect("/DEAPhoniexAirlines/Client/Login.html");
+                }
+        }
+    }
+
+
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
+      out.write("        <title>Flights</title>\n");
+      out.write("       \n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1>Hello World!</h1>\n");
+      out.write("        <h1>Arrivals</h1>\n");
+      out.write("        ");
+
+            String query = "SELECT * FROM flightarrival";
+            PreparedStatement ps = con.prepareStatement(query);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            out.print("<table border = '1'>" 
+                    +"<tr>" 
+                    +"<td></td>"
+                    +"<td>Time</td>"
+                    +"<td>Date</td>"
+                    + "<td>Flight</td>"
+                    + "<td>From</td>"
+                    + "<td>Airline</td>"
+                    + "<td>AirCraft</td>"
+                    + "<td>Status</td>"
+                    +"</tr>");
+           
+
+            while(rs.next()){
+                
+                int id = rs.getInt("fid");
+                Time Time = rs.getTime("arrival");
+                Date date = rs.getDate("arrival");
+                String flight = rs.getString("flight");
+                String from = rs.getString("departed_from");
+                String airline = rs.getString("airline");
+                String aircraft = rs.getString("aircraft");
+                String status = rs.getString("status");
+                
+                
+                
+                out.print("<tr>"
+                        +"<form action='flightdelete' method='post'>"
+                            + "<td>" + "<input type='hidden' value='"+id+"' name='id' readonly> " + "</td>"
+                            + "<td>" + "<input type='text' value='"+Time+"' name='time' readonly> " + "</td>"
+                            + "<td>" + "<input type='text' value='"+date+"' name='date' readonly> " + "</td>"
+                            + "<td>" + "<input type='text' value='"+flight+"' name='flight' readonly>" + "</td>"
+                            + "<td>" + "<input type='text' value='"+from+"' name='from' readonly>" + "</td>"
+                            + "<td>" + "<input type='text' value='"+airline+"' name='airline' readonly>" + "</td>"
+                            + "<td>" + "<input type='text' value='"+aircraft+"' name='aircraft' readonly>" + "</td>"
+                            + "<td>" + "<input type='text' value='"+status+"' name='status' readonly>" + "</td>");
+                                        
+                                   
+                if("admin".equals(user) || "sg2".equals(user)){
+                    
+                    out.print("<td>"
+                            + "<input type='submit' value ='Delete' name='button'/>"
+                            + "<input type='hidden' value ='arrival' name='formname'/>"
+                            + "</td>"
+                            + "</form>");
+                }else {
+                    out.print("</form>");
+                }
+            }
+            
+            out.print("</table>"); 
+        
+      out.write("\n");
+      out.write("        \n");
+      out.write("        <h1>Departures</h1>\n");
+      out.write("        \n");
+      out.write("        ");
+
+            String dquery = "SELECT * FROM flightdeparture";
+            PreparedStatement dps = con.prepareStatement(dquery);
+            
+            ResultSet drs = dps.executeQuery();
+            
+            out.print("<table border = '1'>" 
+                    +"<tr>" 
+                    +"<td></td>"
+                    +"<td>Time</td>"
+                    +"<td>Date</td>"
+                    + "<td>Flight</td>"
+                    + "<td>From</td>"
+                    + "<td>Airline</td>"
+                    + "<td>AirCraft</td>"
+                    + "<td>Status</td>"
+                    +"</tr>");
+           
+
+            while(drs.next()){
+                
+                int id = drs.getInt("fid");
+                Time Time = drs.getTime("time");
+                Date date = drs.getDate("time");
+                String flight = drs.getString("flight");
+                String whereto = drs.getString("where_to");
+                String airline = drs.getString("airline");
+                String aircraft = drs.getString("aircraft");
+                String status = drs.getString("status");
+                
+                
+                
+                out.print("<tr>"
+                        +"<form action='flightdelete' method='post'>"
+                            + "<td>" + "<input type='hidden' value='"+id+"' name='id' readonly> " + "</td>"
+                            + "<td>" + "<input type='text' value='"+Time+"' name='time' readonly> " + "</td>"
+                            + "<td>" + "<input type='text' value='"+date+"' name='date' readonly> " + "</td>"
+                            + "<td>" + "<input type='text' value='"+flight+"' name='flight' readonly>" + "</td>"
+                            + "<td>" + "<input type='text' value='"+whereto+"' name='whereto' readonly>" + "</td>"
+                            + "<td>" + "<input type='text' value='"+airline+"' name='airline' readonly>" + "</td>"
+                            + "<td>" + "<input type='text' value='"+aircraft+"' name='aircraft' readonly>" + "</td>"
+                            + "<td>" + "<input type='text' value='"+status+"' name='status' readonly>" + "</td>");
+                
+                if("admin".equals(user) || "sg2".equals(user)){
+                    
+                    out.print("<td>"
+                            + "<input type='submit' value ='Delete' name='button'/>"
+                            + "<input type='hidden' value ='Departure' name='formname'/>"
+                            + "</td>"
+                            + "</form>");
+                }else{
+                    out.print("</form>");
+                }
+            }
+            
+            out.print("</table>"); 
+        
+      out.write("\n");
+      out.write("        \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

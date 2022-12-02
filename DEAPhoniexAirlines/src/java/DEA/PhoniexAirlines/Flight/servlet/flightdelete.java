@@ -73,7 +73,7 @@ public class flightdelete extends HttpServlet {
             }
         }
         
-        response.sendRedirect("/DEAPhoniexAirlines/flights/flights.jsp");
+        response.sendRedirect("flights.jsp");
     }
 
     /**

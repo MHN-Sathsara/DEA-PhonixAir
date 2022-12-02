@@ -3,27 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DEA.PhoniexAirlines.Admin.servlet;
+package DEA.PhoniexAirlines.Flight.servlet;
 
-import DEA.PhoniexAirlines.Admin.DAO.Admindao;
-import DEA.PhoniexAirlines.Admin.model.Admin;
-import DEA.PhoniexAirlines.connection.DBConnection;
+import DEA.PhoniexAirlines.ClientRegistration.DBC;
+import DEA.PhoniexAirlines.Flight.model.flight;
+import DEA.PhoniexAirlines.Flights.dao.addflightdao;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Raffael
  */
-public class adminlogin extends HttpServlet {
+public class addflight extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +38,10 @@ public class adminlogin extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet adminlogin</title>");            
+            out.println("<title>Servlet addflight</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet adminlogin at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet addflight at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -53,25 +49,29 @@ public class adminlogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         PrintWriter out = response.getWriter();
-        //apply proper path in web.xml in web Inf
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
         
-        try {
-            Admindao admindao = new Admindao(DBConnection.getCon());
-            Admin admin = admindao.logAdmin(username,password);
-            if(admin!=null){
-                HttpSession session = request.getSession();
-                session.setAttribute("loggedAdmin", admin);
-                session.setAttribute("type","admin");
-                response.sendRedirect("admindash.jsp");
-            }else{
-                out.println("User Does Not Exist");
-            }
-        } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(adminlogin.class.getName()).log(Level.SEVERE, null, ex);
+        PrintWriter out = response.getWriter();
+        
+        String time = request.getParameter("time");
+        String flight = request.getParameter("flight");
+        String from = request.getParameter("loc");
+        String airline = request.getParameter("airlines");
+        String aircraft = request.getParameter("aircraft");
+        String status = request.getParameter("status");
+        
+        flight fl = new flight(time, flight, from, airline, aircraft, status);
+        
+        addflightdao afd = new addflightdao(DBC.getCon());
+        
+        if(afd.addFlightArrival(fl)){
+            out.print("Added Successfully");
+            response.sendRedirect("/DEAPhoniexAirlines/flights/flights.jsp");
+        }else{
+            out.print("Failed");
         }
+        
+        
+        
     }
 
     /**
