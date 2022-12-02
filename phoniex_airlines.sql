@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2022 at 10:47 AM
+-- Generation Time: Dec 02, 2022 at 04:08 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -88,12 +88,58 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`id`, `nic`, `username`, `email`, `password`) VALUES
-(1, '12345678000v', 'user1', 'user1@gmail.com', '@phoniex#user'),
+(1, '12345678000v', 'user1updated', 'user1@gmail.com', '@phoniex#user'),
 (3, '11111111111V', 'user2', 'user2@mail.com', '@phoniex#user2'),
 (5, '22222222222V', 'user3', 'user3@mail.com', '@phoniex#user3'),
 (6, '33333333333V', 'user4', 'user4@mail.com', '@phoniex#user4'),
 (7, '44444444444V', 'user5', 'user5@mail.com', '@phoniex#user5'),
 (9, '55555555555V', 'user6', 'user6@mail.com', '@phoniex#user6');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flightarrival`
+--
+
+CREATE TABLE `flightarrival` (
+  `fid` int(11) NOT NULL,
+  `arrival` datetime NOT NULL,
+  `flight` varchar(6) NOT NULL,
+  `departed_from` varchar(100) NOT NULL,
+  `airline` varchar(20) NOT NULL,
+  `aircraft` varchar(20) NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `flightarrival`
+--
+
+INSERT INTO `flightarrival` (`fid`, `arrival`, `flight`, `departed_from`, `airline`, `aircraft`, `status`) VALUES
+(1, '2022-12-02 04:10:00', 'AK719', 'Kula Lampur', 'AirAsia', 'A2ON(9M-AGQ)', 'Landed');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flightdeparture`
+--
+
+CREATE TABLE `flightdeparture` (
+  `fid` int(11) NOT NULL,
+  `time` datetime NOT NULL,
+  `flight` varchar(6) NOT NULL,
+  `where_to` varchar(200) NOT NULL,
+  `airline` varchar(20) NOT NULL,
+  `aircraft` varchar(20) NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `flightdeparture`
+--
+
+INSERT INTO `flightdeparture` (`fid`, `time`, `flight`, `where_to`, `airline`, `aircraft`, `status`) VALUES
+(1, '2022-12-02 05:10:00', 'AK719', 'USA', 'AirAsia', 'A2ON(9M-AGQ)', 'Departured');
 
 -- --------------------------------------------------------
 
@@ -168,6 +214,18 @@ ALTER TABLE `client`
   ADD UNIQUE KEY `nic` (`nic`);
 
 --
+-- Indexes for table `flightarrival`
+--
+ALTER TABLE `flightarrival`
+  ADD PRIMARY KEY (`fid`);
+
+--
+-- Indexes for table `flightdeparture`
+--
+ALTER TABLE `flightdeparture`
+  ADD PRIMARY KEY (`fid`);
+
+--
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
@@ -208,6 +266,18 @@ ALTER TABLE `blockedstaff`
 --
 ALTER TABLE `client`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `flightarrival`
+--
+ALTER TABLE `flightarrival`
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `flightdeparture`
+--
+ALTER TABLE `flightdeparture`
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `staff`
