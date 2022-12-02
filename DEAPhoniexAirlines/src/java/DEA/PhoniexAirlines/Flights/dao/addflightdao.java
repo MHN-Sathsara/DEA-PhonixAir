@@ -45,7 +45,34 @@ public class addflightdao{
         }catch(SQLException e){
             e.printStackTrace();
         }
+
+         return added;
+    }
+    
+    public boolean addFlightDeparture(flight fl){
+        boolean added = false;
          
+        try{
+             
+            String query = "INSERT INTO flightdeparture(time, flight, where_to, airline, aircraft, status) VALUES(?,?,?,?,?,?)";
+            
+            PreparedStatement ps = this.con.prepareStatement(query);
+            
+            ps.setString(1, fl.getTime());
+            ps.setString(2, fl.getFlight());
+            ps.setString(3, fl.getFrom());
+            ps.setString(4, fl.getAirline());
+            ps.setString(5, fl.getAircraft());
+            ps.setString(6, fl.getStatus());
+            
+            added = true;
+            
+            ps.executeUpdate();
+             
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
          return added;
     }
 }

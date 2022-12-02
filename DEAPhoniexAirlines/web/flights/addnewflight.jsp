@@ -42,7 +42,7 @@
                         <input type="datetime-local" name="time"/>
                     </td>
                     <td>
-                        <select name="type">
+                        <select name="ftype">
                             <option value="arrival">Arrival</option>
                             <option value="departure">Departure</option>
                         </select>

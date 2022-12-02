@@ -58,16 +58,26 @@ public class addflight extends HttpServlet {
         String airline = request.getParameter("airlines");
         String aircraft = request.getParameter("aircraft");
         String status = request.getParameter("status");
+        String type = request.getParameter("ftype");
         
         flight fl = new flight(time, flight, from, airline, aircraft, status);
         
         addflightdao afd = new addflightdao(DBC.getCon());
         
-        if(afd.addFlightArrival(fl)){
-            out.print("Added Successfully");
-            response.sendRedirect("/DEAPhoniexAirlines/flights/flights.jsp");
+        if("arrival".equals(type)){
+            if(afd.addFlightArrival(fl)){
+                out.print("Added Successfully");
+                response.sendRedirect("/DEAPhoniexAirlines/flights/flights.jsp");
+            }else{
+                out.print("Failed");
+            }
         }else{
-            out.print("Failed");
+            if(afd.addFlightDeparture(fl)){
+                out.print("Added Successfully");
+                response.sendRedirect("/DEAPhoniexAirlines/flights/flights.jsp");
+            }else{
+                out.print("Failed");
+            }
         }
         
         
