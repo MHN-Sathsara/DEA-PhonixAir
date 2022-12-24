@@ -20,14 +20,16 @@ public class flight {
     private String airline;
     private String aircraft;
     private String status;
+    private float price;
 
-    public flight(String time, String flight, String from, String airline, String aircraft, String status) {
+    public flight(String time, String flight, String from, String airline, String aircraft, String status,float price) {
         this.time = time;
         this.flight = flight;
         this.from = from;
         this.airline = airline;
         this.aircraft = aircraft;
         this.status = status;
+        this.price = price;
     }
 
     public flight(int id) {
@@ -90,6 +92,14 @@ public class flight {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
     
     

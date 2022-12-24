@@ -27,7 +27,7 @@ public class addflightdao{
          
         try{
              
-            String query = "INSERT INTO flightarrival(arrival, flight, departed_from, airline, aircraft, status) VALUES(?,?,?,?,?,?)";
+            String query = "INSERT INTO flightarrival(arrival, flight, departed_from, airline, aircraft, status, price) VALUES(?,?,?,?,?,?,?)";
             
             PreparedStatement ps = this.con.prepareStatement(query);
             
@@ -37,6 +37,7 @@ public class addflightdao{
             ps.setString(4, fl.getAirline());
             ps.setString(5, fl.getAircraft());
             ps.setString(6, fl.getStatus());
+            ps.setFloat(7, fl.getPrice());
             
             added = true;
             
@@ -54,7 +55,7 @@ public class addflightdao{
          
         try{
              
-            String query = "INSERT INTO flightdeparture(time, flight, where_to, airline, aircraft, status) VALUES(?,?,?,?,?,?)";
+            String query = "INSERT INTO flightdeparture(time, flight, where_to, airline, aircraft, status, price) VALUES(?,?,?,?,?,?,?)";
             
             PreparedStatement ps = this.con.prepareStatement(query);
             
@@ -64,6 +65,7 @@ public class addflightdao{
             ps.setString(4, fl.getAirline());
             ps.setString(5, fl.getAircraft());
             ps.setString(6, fl.getStatus());
+            ps.setFloat(7, fl.getPrice());
             
             added = true;
             

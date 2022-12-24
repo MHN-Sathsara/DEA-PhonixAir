@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Admin/servlet/adminlogin.java</file>
             <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/flights/flights.jsp</file>
             <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/flights/addnewflight.jsp</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Flight/servlet/flightdelete.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Flights/dao/addflightdao.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/admindash.jsp</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/tickets/servlet/ticketbooking.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/tickets/dao/addroundtrip.java</file>
+            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/tickets/ticketbooking.jsp</file>
             <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Flight/servlet/addflight.java</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Flight/model/flight.java</file>
             <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/web/admin/adminlog.html</file>
-            <file>file:/C:/Users/Raffael/Documents/NetBeansProjects/DEA-PhonixAir/DEAPhoniexAirlines/src/java/DEA/PhoniexAirlines/Staff/servlet/stafflogin.java</file>
         </group>
     </open-files>
 </project-private>

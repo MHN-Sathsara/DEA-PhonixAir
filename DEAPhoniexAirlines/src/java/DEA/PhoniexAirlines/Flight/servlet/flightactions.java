@@ -7,9 +7,10 @@ package DEA.PhoniexAirlines.Flight.servlet;
 
 import DEA.PhoniexAirlines.ClientRegistration.DBC;
 import DEA.PhoniexAirlines.Flight.model.flight;
-import DEA.PhoniexAirlines.Flights.dao.addflightdao;
+import DEA.PhoniexAirlines.Flights.dao.flightdeletedao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Raffael
  */
-public class addflight extends HttpServlet {
+public class flightactions extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,52 +39,67 @@ public class addflight extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet addflight</title>");            
+            out.println("<title>Servlet flightdelete</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet addflight at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet flightdelete at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+            
         PrintWriter out = response.getWriter();
+        int fid = Integer.parseInt(request.getParameter("id"));
+        String formname = request.getParameter("formname");
+        String button = request.getParameter("button");
         
-        String time = request.getParameter("time");
-        String flight = request.getParameter("flight");
-        String from = request.getParameter("loc");
-        String airline = request.getParameter("airlines");
-        String aircraft = request.getParameter("aircraft");
-        String status = request.getParameter("status");
-        String type = request.getParameter("ftype");
-        float price = Float.parseFloat(request.getParameter("price"));
+        flightdeletedao fdd = new flightdeletedao(DBC.getCon());
+        flight fl = new flight(fid);
         
-        flight fl = new flight(time, flight, from, airline, aircraft, status, price);
-        
-        addflightdao afd = new addflightdao(DBC.getCon());
-        
-        if("arrival".equals(type)){
-            if(afd.addFlightArrival(fl)){
-                out.print("Added Successfully");
-                response.sendRedirect("/DEAPhoniexAirlines/flights/flights.jsp");
-            }else{
-                out.print("Failed");
+        if("Departure".equals(formname)){
+            
+            if("Book".equals(button)){
+
+                String id = request.getParameter("id");
+
+                request.setAttribute("id",id);
+
+                RequestDispatcher rd = request.getRequestDispatcher("/tickets/ticketbooking.jsp");
+
+                rd.forward(request, response);
+
             }
-        }else{
-            if(afd.addFlightDeparture(fl)){
-                out.print("Added Successfully");
-                response.sendRedirect("/DEAPhoniexAirlines/flights/flights.jsp");
+            
+        }else {
+        
+            if("arrival".equals(formname)){
+
+                if(fdd.deleteflightfromArrival(fl)){
+                    out.println("Successfully Deleted");
+                }else{
+                    out.println("Delete Failed");
+                }
             }else{
-                out.print("Failed");
+                
+                if(fdd.deleteflightfromDeparture(fl)){
+                    out.println("Successfully Deleted");
+                }else{
+                    out.println("Delete Failed");
+                }
+                
             }
+            response.sendRedirect("flights.jsp");
+            
+
         }
-        
-        
-        
-    }
+
+            
+        }
+    
 
     /**
      * Returns a short description of the servlet.

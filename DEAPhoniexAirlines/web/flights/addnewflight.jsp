@@ -82,6 +82,14 @@
                 </tr>
                 <tr>
                     <td>
+                        Price :
+                    </td>
+                    <td>
+                        <input type="number" name="price"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         Status :
                     </td>
                     <td>

@@ -1,0 +1,15 @@
+SMAP
+tickets_jsp.java
+JSP
+*S JSP
+*F
++ 0 tickets.jsp
+tickets/tickets.jsp
+*L
+5,13:51
+17:64
+20,21:67
+40,11:88
+51,47:100
+97,4:147
+*E
