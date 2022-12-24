@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 04:08 PM
+-- Generation Time: Dec 24, 2022 at 08:27 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -108,15 +108,16 @@ CREATE TABLE `flightarrival` (
   `departed_from` varchar(100) NOT NULL,
   `airline` varchar(20) NOT NULL,
   `aircraft` varchar(20) NOT NULL,
-  `status` varchar(100) NOT NULL
+  `status` varchar(100) NOT NULL,
+  `price` float(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `flightarrival`
 --
 
-INSERT INTO `flightarrival` (`fid`, `arrival`, `flight`, `departed_from`, `airline`, `aircraft`, `status`) VALUES
-(1, '2022-12-02 04:10:00', 'AK719', 'Kula Lampur', 'AirAsia', 'A2ON(9M-AGQ)', 'Landed');
+INSERT INTO `flightarrival` (`fid`, `arrival`, `flight`, `departed_from`, `airline`, `aircraft`, `status`, `price`) VALUES
+(1, '2022-12-02 04:10:00', 'AK719', 'Kula Lampur', 'AirAsia', 'A2ON(9M-AGQ)', 'Landed', 58000.00);
 
 -- --------------------------------------------------------
 
@@ -131,15 +132,71 @@ CREATE TABLE `flightdeparture` (
   `where_to` varchar(200) NOT NULL,
   `airline` varchar(20) NOT NULL,
   `aircraft` varchar(20) NOT NULL,
-  `status` varchar(100) NOT NULL
+  `status` varchar(100) NOT NULL,
+  `price` float(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `flightdeparture`
 --
 
-INSERT INTO `flightdeparture` (`fid`, `time`, `flight`, `where_to`, `airline`, `aircraft`, `status`) VALUES
-(1, '2022-12-02 05:10:00', 'AK719', 'USA', 'AirAsia', 'A2ON(9M-AGQ)', 'Departured');
+INSERT INTO `flightdeparture` (`fid`, `time`, `flight`, `where_to`, `airline`, `aircraft`, `status`, `price`) VALUES
+(16, '2022-12-30 01:20:00', 'asdad', 'adw', 'feq', 'we23', 'arrived', 100000.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `onewaybookings`
+--
+
+CREATE TABLE `onewaybookings` (
+  `ticketid` varchar(10) NOT NULL,
+  `tickettype` varchar(10) NOT NULL,
+  `usermail` varchar(100) NOT NULL,
+  `userfullname` varchar(200) NOT NULL,
+  `passportid` varchar(10) NOT NULL,
+  `destination` varchar(20) NOT NULL,
+  `ticketclass` varchar(10) NOT NULL,
+  `depdate` varchar(20) NOT NULL,
+  `adult` int(10) NOT NULL,
+  `child` int(10) DEFAULT NULL,
+  `price` float(8,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `onewaybookings`
+--
+
+INSERT INTO `onewaybookings` (`ticketid`, `tickettype`, `usermail`, `userfullname`, `passportid`, `destination`, `ticketclass`, `depdate`, `adult`, `child`, `price`) VALUES
+('mjfg9rFcZC', 'oneway', 'phoniexadmin@gmail.com', 'phoniexadmin', 'p000000000', 'adw', 'first', '2022-12-30', 1, 0, 100000.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roundtripbookings`
+--
+
+CREATE TABLE `roundtripbookings` (
+  `ticketid` varchar(10) NOT NULL,
+  `tickettype` varchar(10) NOT NULL,
+  `usermail` varchar(100) NOT NULL,
+  `userfullname` varchar(200) NOT NULL,
+  `passportid` varchar(20) NOT NULL,
+  `destination` varchar(100) NOT NULL,
+  `ticketclass` varchar(20) NOT NULL,
+  `depdate` date NOT NULL,
+  `rdate` date NOT NULL,
+  `adult` int(10) NOT NULL,
+  `child` int(10) DEFAULT NULL,
+  `price` float(8,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `roundtripbookings`
+--
+
+INSERT INTO `roundtripbookings` (`ticketid`, `tickettype`, `usermail`, `userfullname`, `passportid`, `destination`, `ticketclass`, `depdate`, `rdate`, `adult`, `child`, `price`) VALUES
+('XM6C47feNl', 'round', 'phoniexadmin@gmail.com', 'temp', 'ptemp', 'adw', 'eco', '2022-12-30', '2022-12-31', 1, 1, 100000.00);
 
 -- --------------------------------------------------------
 
@@ -226,6 +283,18 @@ ALTER TABLE `flightdeparture`
   ADD PRIMARY KEY (`fid`);
 
 --
+-- Indexes for table `onewaybookings`
+--
+ALTER TABLE `onewaybookings`
+  ADD PRIMARY KEY (`ticketid`);
+
+--
+-- Indexes for table `roundtripbookings`
+--
+ALTER TABLE `roundtripbookings`
+  ADD PRIMARY KEY (`ticketid`);
+
+--
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
@@ -271,13 +340,13 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `flightarrival`
 --
 ALTER TABLE `flightarrival`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `flightdeparture`
 --
 ALTER TABLE `flightdeparture`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `staff`
