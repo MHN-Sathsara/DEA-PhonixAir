@@ -124,6 +124,21 @@ body {
   padding-right: 30px;
 }
 
+.depart-date{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 0px;
+  margin-right: 45px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.date-hold{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .date input[type="text"],
 .date input[type="date"] {
 }
