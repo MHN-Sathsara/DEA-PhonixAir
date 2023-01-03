@@ -36,6 +36,8 @@
         <a href="blockedclients.jsp">Blocked Customers</a><br>
         <a href="/DEAPhoniexAirlines/flights/flights.jsp">flights</a><br>
         <a href="/DEAPhoniexAirlines/flights/addnewflight.jsp">Add New Flight</a><br>
+        <a href="/DEAPhoniexAirlines/bookings/bookings.jsp">Bookings</a><br>
+        
         
     </body>
 </html>

@@ -61,30 +61,7 @@ public final class tickets_jsp extends org.apache.jasper.runtime.HttpJspBase
     
     Connection con = db.getCon();
 
-      out.write('\n');
- 
-     
-    String user = (String)session.getAttribute("type");
-    if(user != null){
-        if("admin".equals(user)){
-                Admin admin = (Admin) session.getAttribute("loggedAdmin");
-                if(admin == null) {
-                    response.sendRedirect("/DEAPhoniexAirlines/admin/adminlogin.jsp");
-                }
-        }else if("sg2".equals(user) || "sg1".equals(user)){
-                StaffMember staff = (StaffMember) session.getAttribute("loggedStaff"); 
-                if(staff == null) {
-                    response.sendRedirect("/DEAPhoniexAirlines/Staff/Staff-Login.html");
-                }
-        }else{
-                Client client = (Client) session.getAttribute("loggedClient"); 
-                if(client == null) {
-                    response.sendRedirect("/DEAPhoniexAirlines/Client/Login.html");
-                }
-        }
-    }
-
-
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");

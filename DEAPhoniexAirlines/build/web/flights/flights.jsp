@@ -160,13 +160,13 @@
                             + "<td>" + "<input type='text' value='"+aircraft+"' name='aircraft' readonly>" + "</td>"
                             + "<td>" + "<input type='text' value='"+status+"' name='status' readonly>" + "</td>"
                             + "<td>" + "<input type='number' value='"+price+"' name='price' readonly>" + "</td>"
-                            + "<td>" + "<input type='submit' value='Book' name='button'>");
+                            + "<td>" + "<input type='submit' value='Book' name='button'>"
+                            + "<input type='hidden' value ='Departure' name='formname'/>");
                 
                 if("admin".equals(user) || "sg2".equals(user)){
                     
                     out.print("<td>"
                             + "<input type='submit' value ='Delete' name='button'/>"
-                            + "<input type='hidden' value ='Departure' name='formname'/>"
                             + "</td>"
                             + "</form>");
                 }else{

@@ -29,5 +29,6 @@
         </form>
         <a href="/DEAPhoniexAirlines/flights/flights.jsp">Flights</a>
         <a href="/DEAPhoniexAirlines/flights/addnewflight.jsp">Add New Flight</a>
+        <a href="/DEAPhoniexAirlines/bookings/bookings.jsp">Bookings</a><br>
     </body>
 </html>
